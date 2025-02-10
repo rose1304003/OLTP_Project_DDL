@@ -1,0 +1,112 @@
+
+Healthcare Management System Project Assignment
+Project Overview
+The goal of this project is to develop a Healthcare Management System (HMS) that utilizes a master ERP table for managing patient information. Students will learn to implement a range of SQL skills, including data cleaning, standardization, database design, and the creation of various SQL constructs such as tables, views, and stored procedures. The project will simulate real-world challenges in handling healthcare data, enabling students to gain practical experience.
+Objectives
+Data Cleaning and Standardization: Identify and correct data quality issues in a provided master dataset.
+Database Design: Design an appropriate relational database schema based on the master table.
+SQL Programming: Write SQL scripts to create the database tables and populate them with cleaned data.
+Advanced SQL Techniques: Implement views, stored procedures, and triggers to enhance database functionality.
+Data Analysis: Perform queries to extract meaningful insights from the data.
+Project Structure
+1. ERP Master Patient Table Structure
+This table serves as the source of patient data containing a wide array of fields related to patient information, including personal details, medical history, and contact information.
+2. Tables to Create
+The following tables should be created to normalize the data from the ERP_Master_Patient table:
+Patients Table:
+patient_id
+first_name
+last_name
+dob
+gender
+address
+city
+state
+postal_code
+phone_number
+email
+insurance_provider
+insurance_policy_number
+blood_type
+allergies
+medications
+diagnosis
+admission_date
+discharge_date
+emergency_contact_name
+emergency_contact_phone
+emergency_contact_relationship
+insurance_expiration_date
+blood_pressure
+heart_rate
+weight
+height
+temperature
+Doctors Table:
+doctor_id
+first_name
+last_name
+specialty
+phone_number
+email
+Nurses Table:
+nurse_id
+first_name
+last_name
+phone_number
+email
+Billing Table:
+billing_id
+patient_id
+total_amount
+amount_paid
+billing_date
+due_date
+payment_status
+insurance_coverage
+Insurance Table:
+insurance_id
+insurance_provider
+policy_number
+coverage_start_date
+coverage_end_date
+patient_id
+Rooms Table:
+room_number
+room_type
+capacity
+current_occupancy
+is_available
+3. Stored Procedures
+Students will create stored procedures to manage data within the database, including:
+Load Data into Patients Table: A stored procedure that populates the Patients table from the ERP_Master_Patient table, ensuring that duplicate records are not inserted.
+Update Patient Information: A stored procedure that allows updating patient details based on their unique patient ID.
+Manage Billing Information: A stored procedure to insert or update billing records, ensuring that related patient data is validated before making changes to the billing table.
+Allocate Room to Patient: A stored procedure that assigns a room to a patient upon admission, checking for available rooms and updating the Rooms table to reflect the current occupancy.
+Record Patient Discharge: A stored procedure that updates the patient’s discharge date and makes the room available again.
+Process Payment: A stored procedure to update billing records when a payment is made, checking that the payment does not exceed the total amount due.
+4. Views
+Students will create the following views to simplify data retrieval and facilitate patient, doctor, and room allocation:
+View for Patient Summary: A view that aggregates essential patient information for quick access.
+View for Doctor Assignments: A view that shows how many patients each doctor is responsible for, facilitating better understanding of patient loads.
+View for Billing Summary: A view that combines patient details with their billing information to provide a comprehensive overview of outstanding payments and billing history.
+View for Room Availability: A view that displays all rooms along with their current occupancy status, helping staff quickly find available rooms.
+
+Shadow_syntax, [2/10/2025 4:10 PM]
+View for Patient Room Allocation: A view that links patients with their assigned rooms, showing which patients are currently occupying which rooms and their admission dates.
+View for Patient-Doctor Assignments: A view that shows the relationship between patients and their assigned doctors, including the doctor’s specialty for quick reference.
+5. Data Integrity and Referential Integrity
+Data integrity is crucial in any database design, particularly in healthcare, where accuracy is vital. The following measures should be implemented:
+Primary Keys: Ensure that every table has a primary key to uniquely identify records.
+Foreign Keys: Use foreign keys to enforce referential integrity between related tables.
+Check Constraints: Implement check constraints to enforce valid values in specific columns.
+Cascading Updates and Deletes: Consider whether to implement cascading updates or deletes to maintain referential integrity when records are modified or removed.
+6. Additional Assignments
+Implement Window Functions: Create a query that uses window functions to calculate the average length of stay for patients.
+Implementing Triggers: Design a trigger that logs updates made to patient records into an audit table to track changes.
+Recursive Common Table Expressions (CTEs): Use recursive CTEs to explore hierarchical data, such as family relationships based on emergency contacts stored in the Patients table.
+7. Deliverables
+SQL scripts for data cleaning, table creation, and data manipulation.
+SQL scripts for the stored procedures, views, functions, and triggers.
+Screenshots or outputs from queries demonstrating the analysis performed.
+A final report summarizing the project, findings, and any challenges faced.
